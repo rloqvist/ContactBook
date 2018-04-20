@@ -1,0 +1,4 @@
+target/
+ContactBook/
+derby.log
+nbactions.tmp

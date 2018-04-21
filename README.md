@@ -22,7 +22,7 @@ Especially keep the `-U`-flag to download the Spring Boot sources.
 
 ### Other
 
-Here are the dependencies listed in the `pom.xml` tht you will need to install.
+Here are the dependencies listed in the `pom.xml` that you will need to install.
 
 ```xml
 <dependencies>
@@ -58,7 +58,7 @@ The `spring-boot-devtools` are indeed optional.
 ## Class DBConnector
 
 This is a class with two public methods, `create` and `getConnection`. My
-thinking here was that everytime the application starts, it is a good time to
+thinking here was that every time the application starts, it is a good time to
 make sure the database itself and the tables exist, so `create` is called upon
 booting. `create` then proceeds to call `createDatabase` and `createTable`,
 which in turn are private.
@@ -81,7 +81,7 @@ which I do not really worry about being prone to SQL-injection.
 
 ## Tests
 
-Since this is a web-app, testing is inherently difficult. However, since i'm not
+Since this is a web-app, testing is inherently difficult. However, since I'm not
 using an ORM, the contact-fields could be messy to update and maintain, should
 the application grow. This made me add tests to make sure the `Contact` and
 `ContactForm` has the right attributes.
@@ -90,7 +90,7 @@ the application grow. This made me add tests to make sure the `Contact` and
 
 Some petulances I have regarding the solution;
 
-* The database name is hardcoded, and is not password protected.
+* The database name is hard coded, and is not password protected.
 * Error handling is not optimal. Mostly I catch a generic `Exception` and log it
 to the console. Ideally  I would want to catch specific exceptions to know the
 exact state of the program.
@@ -99,4 +99,4 @@ it turned out not to be a lot of that, so I figured I could put all the logic in
 the data access object.
 * I couldn't get the redirect to work across the controllers. I guess it is some
 Spring quirk I didn't get the hang of, so now the form processing lies in the
-web controller instead of the api controller.
+web controller instead of the API controller.
